@@ -1,8 +1,6 @@
 # IosAssetExtractor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ios_asset_extractor`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby wrapper for the [iOS Asset Extractor](https://github.com/Marxon13/iOS-Asset-Extractor)
 
 ## Installation
 
@@ -22,7 +20,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+A simple exec example:
+
+`ios_asset_extractor -i {input_file} -o {output_file}`
+
+You can see more options [here](https://github.com/Marxon13/iOS-Asset-Extractor#usage)
+
+## Lib Use
+
+```ruby
+require 'ios_asset_extractor'
+
+extractor = IosAssetExtractor::Extractor.new 'filepath'
+
+extractor.file_with_size_hash # {:name=>"videoPlayer_play_25x25_@2x.png", :size=>586}
+
+extractor.extract_to 'dir_path'
+```
 
 ## Development
 
